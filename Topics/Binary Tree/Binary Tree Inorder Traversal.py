@@ -29,4 +29,21 @@ class Solution2:
             root = root.right
         return ans
 
-
+# Morris Method
+class Solution3:
+    def inorderTraversal(self, root):
+        ans = []
+        curr = root
+        while curr:
+            if not curr.left:
+                ans.append(curr.val)
+                curr = curr.right
+            else:
+                pre = curr.left
+                while pre.right:
+                    pre = pre.right
+                pre.right = curr
+                temp = curr
+                curr = curr.left
+                temp.left = None
+        return ans
