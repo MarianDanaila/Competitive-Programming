@@ -1,3 +1,4 @@
+# Approach 1 using HashMap
 from collections import Counter
 
 
@@ -10,3 +11,12 @@ class Solution:
                 freq_t.pop(ch)
         for key in freq_t:
             return key
+
+# Approach 2 using Bit Manipulation (XOR)
+class Solution:
+    def findTheDifference(self, s: str, t: str) -> str:
+        xor = ord(t[-1])
+        for i in range(len(s)):
+            xor ^= ord(s[i])
+            xor ^= ord(t[i])
+        return chr(xor)
