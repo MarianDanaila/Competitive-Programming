@@ -28,6 +28,7 @@ class Solution:
         while heap:
             prob, curr = heapq.heappop(heap)
             prob = -prob
+            visited[curr] = True
             if curr == end:
                 return p[curr]
             if p[curr] > prob:
