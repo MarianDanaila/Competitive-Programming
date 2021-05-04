@@ -10,6 +10,5 @@ class Solution:
             for j in range(n):
                 if boxes[j] == '1':
                     op += abs(j - i)
-
             answer[i] = op
         return answer

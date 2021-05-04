@@ -10,7 +10,6 @@ class Solution:
         while i < n:
             merged.append(word1[i])
             i += 1
-
         while i < m:
             merged.append(word2[i])
             i += 1

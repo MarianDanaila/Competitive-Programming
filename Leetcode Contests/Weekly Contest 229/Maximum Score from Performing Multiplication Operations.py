@@ -10,6 +10,7 @@ class Solution:
         def dfs(l, i):
             if i == m:
                 return 0
+
             if not dp[l][i]:
                 pick_left = dfs(l + 1, i + 1) + nums[l] * muls[i]
                 pick_right = dfs(l, i + 1) + nums[n - (i - l) - 1] * muls[i]
