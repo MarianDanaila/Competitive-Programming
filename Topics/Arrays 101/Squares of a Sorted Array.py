@@ -16,4 +16,5 @@ class Solution:
                 squares[index] = nums[j] * nums[j]
                 j -= 1
             index -= 1
+
         return squares
