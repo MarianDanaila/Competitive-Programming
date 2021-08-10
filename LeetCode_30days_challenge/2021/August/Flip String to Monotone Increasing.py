@@ -1,7 +1,6 @@
 class Solution:
     def minFlipsMonoIncr(self, s: str) -> int:
         n = len(s)
-        stack = []
         ones_changed = ones_unchanged = 0
         for i in range(n):
             if s[i] == '1':
