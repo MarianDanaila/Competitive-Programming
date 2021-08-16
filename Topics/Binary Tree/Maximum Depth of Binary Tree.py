@@ -1,25 +1,39 @@
-# TOP-DOWN
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+# Approach 1: Top-Down
+
+
 class Solution:
-    def maxDepth(self, root):
-        self.answer = 0
-        def helper(root, depth):
-            if not root:
+    def __init__(self):
+        self.max_depth = 0
+
+    def maxDepth(self, root: TreeNode) -> int:
+
+        def traverse(node, depth):
+            if not node:
                 return
-            if not root.left and not root.right:
-                self.answer = max(self.answer, depth)
-            else:
-                helper(root.left, depth+1)
-                helper(root.right, depth+1)
-        helper(root,1)
-        return self.answer
+            if not node.left and not node.right:
+                self.max_depth = max(self.max_depth, depth)
+            traverse(node.left, depth + 1)
+            traverse(node.right, depth + 1)
 
-# BOTTOM-UP
+        traverse(root, 1)
+        return self.max_depth
+
+
+# Approach 2: Bottom-Up
+
+
 class Solution:
-    def maxDepth(self, root):
+    def maxDepth(self, root: TreeNode) -> int:
         if not root:
-            return
-        else:
-            left_depth = self.maxDepth(root.left)
-            right_depth =self.maxDepth(root.right)
-            return max(left_depth, right_depth) + 1
+            return 0
 
+        left_depth = self.maxDepth(root.left)
+        right_depth = self.maxDepth(root.right)
+        return 1 + max(left_depth, right_depth)
