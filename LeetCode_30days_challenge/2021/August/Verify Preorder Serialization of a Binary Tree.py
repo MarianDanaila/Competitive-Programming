@@ -5,7 +5,7 @@ class Solution:
         if preorder[0] == '#':
             return n == 1
         idx = 0
-        stack = [preorder[idx]]
+        stack = [preorder[0]]
 
         for idx in range(1, n):
             if preorder[idx] != '#':
@@ -14,3 +14,4 @@ class Solution:
                 if not stack:
                     return idx == n - 1
                 stack.pop()
+        return False
