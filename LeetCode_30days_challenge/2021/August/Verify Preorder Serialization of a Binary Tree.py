@@ -4,7 +4,6 @@ class Solution:
         n = len(preorder)
         if preorder[0] == '#':
             return n == 1
-        idx = 0
         stack = [preorder[0]]
 
         for idx in range(1, n):
